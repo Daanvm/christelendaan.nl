@@ -1,0 +1,18 @@
+---
+version: '3.9'
+services:
+  christelendaan-nl-nginx:
+    build:
+      dockerfile: Dockerfile-nginx
+    restart: unless-stopped
+    volumes:
+      - ./app/public:/usr/share/nginx/html/:delegated
+    ports:
+      - '8082:80'
+
+  christelendaan-nl-php:
+    build:
+      dockerfile: Dockerfile-php
+    restart: unless-stopped
+    volumes:
+      - ./app:/usr/src/christelendaan.nl/:delegated

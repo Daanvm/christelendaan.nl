@@ -1,0 +1,70 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: christelendaan-nl
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: christelendaan-nl
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: christelendaan-nl
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: christelendaan-nl
+  template:
+    metadata:
+      labels:
+        app: christelendaan-nl
+    spec:
+      containers:
+        - name: christelendaan-nl-nginx
+          image: daanvm/christelendaan.nl-nginx:latest
+          ports:
+            - containerPort: 80
+          lifecycle:
+            preStop:
+              exec:
+                # Gracefully shutdown nginx
+                command: ["/bin/bash", "-c", "/bin/sleep5 && /usr/sbin/nginx -s quit"]
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: christelendaan-nl-php
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9000
+      targetPort: 9000
+  selector:
+    app: christelendaan-nl-php
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: christelendaan-nl-php
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: christelendaan-nl-php
+  template:
+    metadata:
+      labels:
+        app: christelendaan-nl-php
+    spec:
+      containers:
+        - name: christelendaan-nl-php
+          image: daanvm/christelendaan.nl-php:latest
+          ports:
+            - containerPort: 9000

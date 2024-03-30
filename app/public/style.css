@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Colombia';
+    src: url('fonts/Colombia-Regular.woff2') format('woff2'),
+    url('fonts/Colombia-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Colombia';
+    src: url('fonts/Colombia-Regular-Italic.woff2') format('woff2'),
+    url('fonts/Colombia-Regular-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Colombia';
+    src: url('fonts/Colombia-Bold-Italic.woff2') format('woff2'),
+    url('fonts/Colombia-Bold-Italic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Colombia';
+    src: url('fonts/Colombia-Bold.woff2') format('woff2'),
+    url('fonts/Colombia-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Allison Script';
+    src: url('fonts/AllisonScript-Regular.woff2') format('woff2'),
+    url('fonts/AllisonScript-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Didact Gothic';
+    src: url('fonts/DidactGothic-Regular.woff2') format('woff2'),
+    url('fonts/DidactGothic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #ecd9ca;
+
+    text-align: center
+}
+
+img#header {
+    width: 80%;
+    min-width: 500px;
+    border-radius: 5px;
+}
+
+h1 {
+    font-family: 'Colombia', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.3em;
+
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Allison Script', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.5em;
+
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-family: 'Colombia', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.17em;
+
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+
+    margin-top: 2em;
+    margin-bottom: 0.2em;
+}
+
+p {
+    font-family: 'Colombia', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+}
+
+a {
+    color: black
+}
+
+p.intro {
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+footer {
+    margin-top: 4em;
+    border-top: 1px solid black;
+    padding: 1em 0;
+}
